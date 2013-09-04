@@ -24,7 +24,7 @@ y = abs(r2).*sin(theta).*sin(phi);
 z = abs(r2).*cos(theta);
 
 % set figure background to white
-figure('Color',[1 1 1],'renderer','zbuffer','Position', [1, 512, 360, 360]);
+figure('Color',[1 1 1],'renderer','zbuffer','Position', [1, 100, 480, 480]);
 hold on;
 
 % visualization
@@ -33,7 +33,7 @@ axis equal;
 	
 % adjust camera view
 view(40,30)
-camzoom(1.8)
+camzoom(2.8)
 camlight left
 camlight right
 % lighting phong
