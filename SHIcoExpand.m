@@ -1,6 +1,7 @@
 function [a]= SHIcoExpand(coordfile)
-% Expand by integration
-% calculate the coefficients for Cnm and Snm
+% SHICOEXPAND: To calculate the projection on the icosahedral subspace
+%  input: matlab data file name
+% output: expand coefficients
 
 load(coordfile);
 a = zeros(4,1);
@@ -17,8 +18,28 @@ for i=1:NUM_TRI
     N1=TRI(i,1)+1;
     N2=TRI(i,2)+1;
     N3=TRI(i,3)+1;
-    v1=[x(N1)-x(N3),y(N1)-y(N3),z(N1)-z(N3)];
-    v2=[x(N2)-x(N3),y(N2)-y(N3),z(N2)-z(N3)];
+    
+    
+%     v1=[x(N1)-x(N3),y(N1)-y(N3),z(N1)-z(N3)];
+%     v2=[x(N2)-x(N3),y(N2)-y(N3),z(N2)-z(N3)];
+%     S=norm(cross(v1,v2))/2;
+    
+    % the corresponding node on the unit sphere
+    x1=sin(theta(N1))*cos(lambda(N1));
+    y1=sin(theta(N1))*sin(lambda(N1));
+    z1=cos(theta(N1));
+
+    x2=sin(theta(N2))*cos(lambda(N2));
+    y2=sin(theta(N2))*sin(lambda(N2));
+    z2=cos(theta(N2));
+    
+    x3=sin(theta(N3))*cos(lambda(N3));
+    y3=sin(theta(N3))*sin(lambda(N3));
+    z3=cos(theta(N3));
+    
+    v1=[x1-x3,y1-y3,z1-z3];
+    v2=[x2-x3,y2-y3,z2-z3];
+    
     S=norm(cross(v1,v2))/2;
     
     sum_A=sum_A+S;

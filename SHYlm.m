@@ -1,4 +1,7 @@
 function [ Ylm ]= SHYlm(l,m,theta,phi)
+%SHYLM the degree l, order m complex spherical harmonics
+% input: l,m,theta,phi
+% output: function value Ylm
 
 Pn=legendre(l,cos(theta));
 

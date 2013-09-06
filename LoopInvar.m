@@ -46,9 +46,9 @@ for num = 1:length(filelist)
         coordfile = SHReadVtk(projectroot,filename,'vtk','orginal');
         
         % Complex Expansion        
-        Qlm_0 = SHExpandYlm(coordfile,0);
-        Qlm_6 = SHExpandYlm(coordfile,6);
-        Qlm_10 = SHExpandYlm(coordfile,10);
+        Qlm_0 = SHComplexExpandL(coordfile,0);
+        Qlm_6 = SHComplexExpandL(coordfile,6);
+        Qlm_10 = SHComplexExpandL(coordfile,10);
 
         Qlm_0_invar(num)=0;
         for m=1:(2*0+1)

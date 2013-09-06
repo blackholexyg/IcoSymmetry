@@ -1,4 +1,4 @@
-function [Qlm]= SHExpandYlm(sourcefile,L)
+function [Qlm]= SHComplexExpandL(sourcefile,L)
 %SHEXPANDYLM To expand by with integration method
 % calculate the coefficients for Qlm
 
